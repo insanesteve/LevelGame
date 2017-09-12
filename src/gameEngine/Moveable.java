@@ -18,6 +18,6 @@ public interface Moveable extends Drawable{
 	 * this method could be modified to return the new location, with
 	 * additional calls in GameEngine to move the piece. 
 	 */
-	public void move(GamePiece[] pieces, int playerLocation);
+	public void move(Drawable[] pieces, int playerLocation);
 
 }
