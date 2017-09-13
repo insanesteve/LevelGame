@@ -14,7 +14,9 @@ public class VolatileStar  extends GamePiece implements Drawable{
 		
 		if (playerLocation == super.getLocation()) return InteractionResult.HIT;
 		return InteractionResult.NONE;
-		
+		for (Drawable piece: pieces)
+			
+			
 	}
 
 }
