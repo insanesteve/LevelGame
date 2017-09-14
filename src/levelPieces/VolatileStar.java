@@ -3,7 +3,7 @@ package levelPieces;
 import gameEngine.Drawable;
 import gameEngine.InteractionResult;
 
-public class VolatileStar  extends GamePiece implements Drawable{
+public class VolatileStar extends GamePiece implements Drawable{
 
 	public VolatileStar(int location) {
 		super('*', location);

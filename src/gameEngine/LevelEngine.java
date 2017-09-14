@@ -6,23 +6,27 @@ import levelPieces.*;
 
 public class LevelEngine {
 	
-	private static final int BOARD_SIZE = 21;
+	//found out this isn't needed because it is in GameEngine as public...smh
+	//private static final int BOARD_SIZE = 21;
 	private String levelString;
 	private int playerLoc;
 	
 	// Each level has a 1D array of pieces that can be drawn
-	private Drawable [] pieces = new Drawable[BOARD_SIZE];
+	private Drawable [] pieces = new Drawable[GameEngine.BOARD_SIZE];
 	// Only some pieces can move.
-	private ArrayList<Moveable> movingPieces;
+	// need to make a new object....fixed original bug here
+	private ArrayList<Moveable> movingPieces = new ArrayList<Moveable>();
 	// Only game pieces interact
-	private ArrayList<GamePiece> interactingPieces;
+	private ArrayList<GamePiece> interactingPieces = new ArrayList<GamePiece>();
 
 	public void createLevel(int levelNum) {
 		switch(levelNum) {
 		case 1:
 			levelString = "P  8  .. m m . * * mE";
+			break;
 		case 2:
 			levelString = "P. 8  .. m m . * * mE";
+			break;
 		}
 		
 		for (int i = 0; i < pieces.length; i++) {
@@ -34,15 +38,18 @@ public class LevelEngine {
 					break;
 				case '*':
 					pieces[i] = new VolatileStar(i);
-					
+					interactingPieces.add((GamePiece) pieces[i]);
 					break;
 				case '8':
 					pieces[i] = new AgressiveSnowman(i);
+					//Easton spelled "aggressive" wrong...
 					movingPieces.add((Moveable) pieces[i]);
+					interactingPieces.add((GamePiece) pieces[i]);
 					break;
 				case 'm':
 					pieces[i] = new IntrovertedSpider(i);
 					movingPieces.add((Moveable) pieces[i]);
+					interactingPieces.add((GamePiece) pieces[i]);
 					break;
 				case '.':
 					pieces[i] = new Rock(i);
