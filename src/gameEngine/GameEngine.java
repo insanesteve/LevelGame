@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import levelPieces.GamePiece;
-import levelPieces.LevelEngine;
+import gameEngine.LevelEngine;
 
 /**
  * Framework for LevelGame. 

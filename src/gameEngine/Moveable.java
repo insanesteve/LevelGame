@@ -19,5 +19,7 @@ public interface Moveable extends Drawable{
 	 * additional calls in GameEngine to move the piece. 
 	 */
 	public void move(Drawable[] pieces, int playerLocation);
+	
+	public void swap(Drawable[] pieces, int changeMove);
 
 }

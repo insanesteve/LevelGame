@@ -12,11 +12,11 @@ public class VolatileStar  extends GamePiece implements Drawable{
 	@Override
 	public InteractionResult interact(Drawable[] pieces, int playerLocation) {
 		
-		if (playerLocation == super.getLocation()) return InteractionResult.HIT;
+		if (playerLocation == super.getLocation()) {
+			System.out.println("Oh no it's a volatile star and its really hot and ouch it hit you ouch burns ow");
+			return InteractionResult.HIT;
+		} 
 		return InteractionResult.NONE;
-		for (Drawable piece: pieces)
-			
-			
 	}
 
 }
