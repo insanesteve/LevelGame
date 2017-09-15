@@ -29,22 +29,22 @@ public class AgressiveSnowman extends GamePiece implements Moveable, Drawable {
 				if (super.getLocation() != pieces.length - 1) {
 					//set the new location and swap it in the array
 					System.out.println("Snowman moves right!");
-					super.setLocation(super.getLocation() + 1);
 					swap(pieces, 1);
+					super.setLocation(super.getLocation() + 1);
 				}
 		}
 		//move left
 		else {
 			//same structure applies here as above
-			if (playerLocation == super.getLocation() - 1){ 
+			if (playerLocation == super.getLocation() - 2){ 
 				System.out.println("Snowman can't move!");
 				return;
 			}
 			
 			if (super.getLocation() != 0) {
 				System.out.println("Snowman moves left!");
-				super.setLocation(super.getLocation() - 2);
 				swap(pieces, -1);
+				super.setLocation(super.getLocation() - 1);
 			}
 		}
 	}
