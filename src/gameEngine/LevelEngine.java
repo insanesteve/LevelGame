@@ -22,12 +22,16 @@ public class LevelEngine {
 	public void createLevel(int levelNum) {
 		switch(levelNum) {
 		case 1:
-			levelString = "P  8  .. m m . * * mE";
+			levelString = "P  8 w.m    . * *  wE";
 			break;
 		case 2:
-			levelString = "P. 8  .. m m . * * mE";
+			levelString = "Pw w.  m  . w  88 w.E";
 			break;
 		}
+		
+		pieces = new Drawable[GameEngine.BOARD_SIZE];
+		movingPieces = new ArrayList<Moveable>();
+		interactingPieces = new ArrayList<GamePiece>();
 		
 		for (int i = 0; i < pieces.length; i++) {
 			switch(levelString.charAt(i)) {
@@ -56,6 +60,12 @@ public class LevelEngine {
 					break;
 				case 'E':
 					pieces[i] = new Exit(i);
+					interactingPieces.add((GamePiece) pieces[i]);
+					break;
+				case 'w':
+					pieces[i] = new GeneticallyModifiedBananaPeel(i);
+					interactingPieces.add((GamePiece) pieces[i]);
+					break;
 			}
 			
 		}

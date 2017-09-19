@@ -1,6 +1,5 @@
 package gameEngine;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import levelPieces.GamePiece;
 import gameEngine.LevelEngine;
